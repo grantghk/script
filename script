@@ -1,0 +1,93 @@
+if key == first then
+local plrs = game:GetService("Players")
+local plr = plrs.LocalPlayer
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Gai Hub", Ocean)
+local Tab = Window:NewTab("Teleport")
+local player = Window:NewTab("Player")
+local setting = Window:NewTab("Setting")
+local settingss = setting:NewSection("setting gui")
+local Section = Tab:NewSection("Teleport to Player")
+---------------------------------------------------
+
+players = {}
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+   table.insert(players,v.Name)
+end
+Section:NewDropdown("Select", "", players, function(abc)
+    Select = abc
+end)
+Section:NewButton("Teleport", "ButtonInfo", function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame
+end)
+settingss:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+local tp = Tab:NewSection("Teleport")
+------------------------------------
+tp:NewButton("Island", "Tp to island", function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Island.Grass.CFrame
+end)
+tp:NewButton("Tower", "tp to tower", function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tower.Platforms.PlatformPart.CFrame
+end)
+local players = player:NewSection("Mics")
+local player1 = player:NewSection("Setting")
+local player2 = player:NewSection("Vote")
+local playersss = player:NewSection("event")
+-------------------------------------------
+players:NewButton("Invisible", "invisible", function()
+local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+x, y, z = X, Y, Z
+game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y-10000, z)
+end)
+players:NewButton("esp", "esp", function()
+while wait() do
+     pcall(function()
+       for i,v in pairs(game.Players:GetChildren()) do
+            if not v.Character.Head:FindFirstChild("ESP") then
+                local BillboardGui = Instance.new("BillboardGui")
+                local TextLabel = Instance.new("TextLabel")
+                BillboardGui.Parent = v.Character.Head
+                BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                BillboardGui.Active = true
+                BillboardGui.Name = "ESP"
+                BillboardGui.AlwaysOnTop = true
+                BillboardGui.LightInfluence = 1.000
+                BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+                TextLabel.Parent = BillboardGui
+                TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                TextLabel.BackgroundTransparency = 1.000
+                TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                TextLabel.Font = Enum.Font.GothamBold
+                TextLabel.Text = v.Name
+                TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                TextLabel.TextScaled = true
+                TextLabel.TextSize = 6.000
+                TextLabel.TextStrokeTransparency = 0.000
+                TextLabel.TextWrapped = true
+            end
+        end
+    end) 
+end  
+end)
+player1:NewSlider("Speed", "set speed", 500, 0, function(s)
+    game.Workspace[plr.Name].Humanoid.WalkSpeed = s
+end)
+player1:NewSlider("Jump", "set jump", 500, 0, function(s)
+    game.Workspace[plr.Name].Humanoid.JumpPower = s
+end)
+players:NewButton("remove fall damage", "remove fall damage", function()
+     game:GetService("Workspace")[plr.Name]:FindFirstChild("FallDamageScript"):Destroy()
+end)
+player2:NewButton("vote menu", "vote", function()
+game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = true
+end)
+player2:NewButton("close vote menu", "close vote", function()
+game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = false
+end)
+end
