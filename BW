@@ -41,7 +41,7 @@ local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
 local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
 local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
 x, y, z = X, Y, Z
-game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y+20, z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y+30, z)
 end)
 settingss:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
 	Library:ToggleUI()
