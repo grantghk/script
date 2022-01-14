@@ -1,11 +1,13 @@
 local plrs = game:GetService("Players")
 local plr = plrs.LocalPlayer
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Gai Hub", Ocean)
+local Window = Library.CreateLib("Grant Hub", Ocean)
+local auto = Window:NewTab("Auto Farm")
 local Tab = Window:NewTab("Teleport")
 local player = Window:NewTab("Player")
 local setting = Window:NewTab("Setting")
 local settingss = setting:NewSection("setting gui")
+local Farm = auto:NewSection("Auto Farm")
 local Section = Tab:NewSection("Teleport to Player")
 ---------------------------------------------------
 
@@ -88,4 +90,11 @@ game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = true
 end)
 player2:NewButton("close vote menu", "close vote", function()
 game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = false
+end)
+--------------------------------------------------
+Farm:NewButton("Auto Farm", "Farm", function()
+    while true do
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tower.Platforms.PlatformPart.CFrame
+	wait(0.5)
+end
 end)
