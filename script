@@ -1,4 +1,4 @@
-if key == first then
+if key == "first" then
 local plrs = game:GetService("Players")
 local plr = plrs.LocalPlayer
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
