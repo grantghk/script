@@ -95,6 +95,6 @@ end)
 Farm:NewButton("Auto Farm", "Farm", function()
     while true do
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tower.Platforms.PlatformPart.CFrame
-	wait(0.5)
+	wait(0.1)
 end
 end)
