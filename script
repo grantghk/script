@@ -1,7 +1,7 @@
 local plrs = game:GetService("Players")
 local plr = plrs.LocalPlayer
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Grant Hub", Ocean)
+local Window = Library.CreateLib("Grant Hub-NDS", Ocean)
 local auto = Window:NewTab("Auto Farm")
 local Tab = Window:NewTab("Teleport")
 local player = Window:NewTab("Player")
