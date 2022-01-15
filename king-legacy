@@ -231,10 +231,10 @@ end)
 ---Mics function
 local Mics = Window:NewTab("Mics")
 local Micss = Mics:NewSection("Player setting")
-Mics:NewSlider("Speed", "set speed", 500, 0, function(s)
+Micss:NewSlider("Speed", "set speed", 500, 0, function(s)
     game.Workspace[plr.Name].Humanoid.WalkSpeed = s
 end)
-Mics:NewSlider("Jump", "set jump", 500, 0, function(s)
+Micss:NewSlider("Jump", "set jump", 500, 0, function(s)
     game.Workspace[plr.Name].Humanoid.JumpPower = s
 end)
 local Micsss = Mics:NewSection("other")
