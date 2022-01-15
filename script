@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Grant hub-Select script", "DarkTheme")
+local Window = Library.CreateLib("Grant hub-Select script", Ocean)
 local NDS = Window:NewTab("NDS")
 local BW = Window:NewTab("BedWars")
 local KL = Window:NewTab("King-Legacy")
@@ -182,7 +182,7 @@ end
 -- CREDIT Kavo Libary
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Grant hub-king legacy", "DarkTheme") 
+local Window = Library.CreateLib("Grant hub-king legacy", Ocean) 
 
 -- auto farm
 local Main = Window:NewTab("Auto Farm")
