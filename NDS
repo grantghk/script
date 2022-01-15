@@ -1,13 +1,50 @@
 local plrs = game:GetService("Players")
 local plr = plrs.LocalPlayer
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Grant Hub-BedWar", Ocean)
-local Tab = Window:NewTab("Basic")
-local Tabs = Tab:NewSection("Misc")
+local Window = Library.CreateLib("Grant Hub-NDS", Ocean)
+local farm = Window:NewTab("Auto Farm")
+local Farm = farm:NewSection("auto farm")
+local Tab = Window:NewTab("Teleport")
+local player = Window:NewTab("Player")
 local setting = Window:NewTab("Setting")
 local settingss = setting:NewSection("setting gui")
----------------------------------------------
-Tabs:NewButton("esp", "esp", function()
+local Section = Tab:NewSection("Teleport to Player")
+---------------------------------------------------
+
+players = {}
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+   table.insert(players,v.Name)
+end
+Section:NewDropdown("Select", "", players, function(abc)
+    Select = abc
+end)
+Section:NewButton("Teleport", "tp", function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame
+end)
+settingss:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+local tp = Tab:NewSection("Teleport")
+------------------------------------
+tp:NewButton("Island", "Tp to island", function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Island.Grass.CFrame
+end)
+tp:NewButton("Tower", "tp to tower", function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tower.Platforms.PlatformPart.CFrame
+end)
+local players = player:NewSection("Mics")
+local player1 = player:NewSection("Setting")
+local player2 = player:NewSection("Vote")
+-------------------------------------------
+players:NewButton("Invisible", "invisible", function()
+local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+x, y, z = X, Y, Z
+game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y-10000, z)
+end)
+players:NewButton("esp", "esp", function()
 while wait() do
      pcall(function()
        for i,v in pairs(game.Players:GetChildren()) do
@@ -38,20 +75,25 @@ while wait() do
     end) 
 end  
 end)
-Tabs:NewButton("Invisible(Beta)", "invisible", function()
-local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
-local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
-local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
-x, y, z = X, Y, Z
-game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y+30, z)
-end)
-
-Tabs:NewSlider("Speed", "set speed", 500, 0, function(s)
+player1:NewSlider("Speed", "set speed", 500, 0, function(s)
     game.Workspace[plr.Name].Humanoid.WalkSpeed = s
 end)
-Tabs:NewSlider("Jump", "set jump", 500, 0, function(s)
+player1:NewSlider("Jump", "set jump", 500, 0, function(s)
     game.Workspace[plr.Name].Humanoid.JumpPower = s
 end)
-settingss:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
-	Library:ToggleUI()
+players:NewButton("remove fall damage", "remove fall damage", function()
+     game:GetService("Workspace")[plr.Name]:FindFirstChild("FallDamageScript"):Destroy()
+end)
+player2:NewButton("vote menu", "vote", function()
+game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = true
+end)
+player2:NewButton("close vote menu", "close vote", function()
+game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = false
+end)
+--------------------------------------------------
+Farm:NewButton("Auto Farm", "Farm", function()
+    while true do
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tower.Platforms.PlatformPart.CFrame
+	wait(0.1)
+end
 end)
