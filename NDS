@@ -19,8 +19,14 @@ end
 Section:NewDropdown("Select", "", players, function(abc)
     Select = abc
 end)
-Section:NewButton("Teleport", "ButtonInfo", function()
+Section:NewButton("Teleport", "tp", function()
      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame
+end)
+Section:NewButton("follow", "follow", function()
+    while true do
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame
+    wait(0.1)
+    end
 end)
 settingss:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
 	Library:ToggleUI()
