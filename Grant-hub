@@ -3,7 +3,22 @@ local Window = Library.CreateLib("Grant hub-Key system", DarkTheme)
 local Tab = Window:NewTab("Key redeem")
 local Section = Tab:NewSection("redeem key here")
 Section:NewTextBox("redeem", "Key", function(Key)
-	if Key == "godgrant999", "grant" then
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
-    end
+	if Key == "GRANT_HUB_KEY_GHSDFHGSDJF" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_HSDFGSHFJSF" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_KHFDSGFKJFG" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_SFKHKSDFGHS" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_SKGFJGFSKDF" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_HJSFKDGSHHF" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
 end)
