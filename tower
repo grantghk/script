@@ -1,0 +1,53 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Grant hub-tower of hell", DarkTheme)
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Main")
+local Section1 = Tab:NewSection("other")
+Section:NewSlider("speed", "change u speed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("jump", "change u jumppower", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+Section:NewButton("inf jump", "inf jump", function()
+    game:GetService("ReplicatedStorage").globalJumps.Value = 6969
+end)
+Section:NewButton("invisible", "invisible", function()
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+        local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+        local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+        x, y, z = X, Y, Z
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y-10000, z)
+end)
+Section:NewButton("tp to end", "go to end", function()
+    for i,v in pairs(game:GetService("Workspace").tower.sections.finish:GetChildren()) do
+        if v.Name == "FinishGlow" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+        end
+    end
+end)
+Section1:NewButton("unlock all item", "unlock all item", function()
+    for i, v in pairs (game:GetService("ReplicatedStorage").Gear:GetChildren()) do
+        if v:IsA("Tool") then
+        poop = v:Clone()
+        poop.Parent = game:GetService("Players").LocalPlayer:FindFirstChild("Backpack")
+        end
+        end
+end)
+Section:NewButton("god mode", "god mode", function()
+    function f()
+        game.Players.LocalPlayer.Character.KillScript:Destroy()
+     end
+     hookfunction(f, function()
+        game.Players.LocalPlayer.Character.KillScript:Destroy()
+     end)
+      
+     f()
+end)
+
+---setting function
+local settinga = Window:NewTab("Setting")
+local settingaa = settinga:NewSection("Gui setting")
+settingaa:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
