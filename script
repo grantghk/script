@@ -11,7 +11,7 @@ local BWS = BW:NewSection("BedWars")
 local KLS = KL:NewSection("King-Legacy")
 local PLS = PL:NewSection("Prison-Life")
 local NJS = NJ:NewSection("Ninja legend")
-local THS = Window:NewTab("Tower-of-hell")
+local THS = TH:NewSection("Tower-of-hell")
 
 NDSS:NewButton("NDS", "get script", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/NDS"))()
