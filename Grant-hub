@@ -3,7 +3,7 @@ local Window = Library.CreateLib("Grant hub-Key system", DarkTheme)
 local Tab = Window:NewTab("Key redeem")
 local Section = Tab:NewSection("redeem key here")
 Section:NewTextBox("redeem", "Key", function(Key)
-	if Key == "godgrant999" then
+	if Key == "godgrant999", "grant" then
        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
     end
 end)
