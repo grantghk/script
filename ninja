@@ -58,7 +58,7 @@ MainSection:NewToggle("Auto buy all belts", "Auto buys all belts", function(v)
 end)
 ---gamepass function
 local Mains = Window:NewTab("gamepass")
-local MainSections = Main:NewSection("unlock gamepass")
+local MainSections = Mains:NewSection("unlock gamepass")
 MainSections:NewButton("Unlock all islands", "Unlocks all islands", function()
     local oldcframe = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     for _,v in pairs(game:GetService("Workspace").islandUnlockParts:GetChildren()) do
