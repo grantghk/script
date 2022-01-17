@@ -18,7 +18,22 @@ Section:NewTextBox("redeem", "Key", function(Key)
 	if Key == "GRANT_HUB_KEY_SKGFJGFSKDF" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
         end
-	if Key == "GRANT_HUB_KEY_HJSFKDGSHHF" then
+	if Key == "GRANT_HUB_KEY_FDGSHNFGDFH" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_ADKUHASKDAJ" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_ASDASGHDASD" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_AHSDKASDASD" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_ASDHGASJASA" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
+        end
+	if Key == "GRANT_HUB_KEY_ASGHDJAASDK" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
         end
 end)
