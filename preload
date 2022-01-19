@@ -1,0 +1,39 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Grant hub-Key system", DarkTheme)
+local Tab = Window:NewTab("premuim script")
+local Section = Tab:NewSection("redeem key here")
+Section:NewTextBox("redeem", "Key", function(Key)
+	if Key == "GRANT_HUB_KEY_GHSDFHGSDJF5451" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_HSDFGSHFJSF4548" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_KHFDSGFKJFG4565" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_SFKHKSDFGHS1221" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_SKGFJGFSKDF1254" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_FDGSHNFGDFH8754" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_ADKUHASKDAJ8754" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_ASDASGHDASD4569" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_AHSDKASDASD4598" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_ASDHGASJASA5185" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+	if Key == "GRANT_HUB_KEY_ASGHDJAASDK5987" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/premuim"))()
+        end
+end)
