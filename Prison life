@@ -62,18 +62,6 @@ end)
 Sectiontp:NewButton("Police room", "tp Police room", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(834.177734, 99.9899826, 2312.87354, 0.852196693, -4.52569509e-07, 0.523221552, 1.94425661e-06, 1, -2.30173919e-06, -0.523221552, 2.97881138e-06, 0.852196693)
 end)
-local Sectiontp2 = Tabtp:NewSection("Teleport to player")
-players = {}
- 
-for i,v in pairs(game:GetService("Players"):GetChildren()) do
-    table.insert(players,v.Name)
-end
-Sectiontp2:NewDropdown("Select", "", players, function(abc)
-     Select = abc
- end)
-Sectiontp2:NewButton("Teleport", "tp", function()
-   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame
-end)
 ---gun function
 local Tabgun = Window:NewTab("Gun menu")
 local Sectiongun = Tabgun:NewSection("Give Gun")
