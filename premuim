@@ -1,0 +1,359 @@
+if game.PlaceId == 189707 then
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Attrixx/FreeScripts/main/YTUILib1.lua"))():init("Grant hub-premuim")
+local Tab = Library:Tab("Main")
+local Section = Tab:Section("Auto Farm")
+local Section1 = Tab:Section("Teleport")
+local Section2 = Tab:Section("Vote menu")
+local Section3 = Tab:Section("Player")
+local Section4 = Tab:Section("Mics")
+local plrs = game:GetService("Players")
+local plr = plrs.LocalPlayer
+local speed = 0
+local times = 0
+local location = 0
+   
+   
+Section:Toggle("start", true or false, function(value)
+     if value == true then
+        times = times + 1
+        while times > 0 do
+            wait(speed)
+	        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-261.877655, 194.919312, 334.123535, 0.598977327, 3.36853319e-08, -0.800765991, -1.04261373e-08, 1, 3.42675825e-08, 0.800765991, -1.21766082e-08, 0.598977327)
+        end
+     end
+end)
+Section:Toggle("stop", true or false, function(value)
+     if value == true then
+        times = times - 1
+     end
+end)
+Section:Dropdown("Tp speed to farm", {"0.1", "0.5", "1", "2", "5", "10"}, "select", function(abc)
+    speed = abc  
+end)
+Section1:Dropdown("Tp speed to farm", {"Tower", "Island"}, "select", function(abc)
+    location = abc
+end)
+Section1:Toggle("Teleport", true or false, function(value)
+    if value == true then
+        if location == "Tower" then
+           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-261.877655, 194.919312, 334.123535, 0.598977327, 3.36853319e-08, -0.800765991, -1.04261373e-08, 1, 3.42675825e-08, 0.800765991, -1.21766082e-08, 0.598977327)
+        end
+        if location == "Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.464523, 47.818306, 15.4910545, -0.155365407, -1.09227747e-08, -0.987857044, -2.02209307e-08, 1, -7.87678811e-09, 0.987857044, 1.875161e-08, -0.155365407)
+         end
+    end
+end) 
+Section2:Toggle("open", true or false, function(value)
+    if value == true then
+    game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = true
+    end
+end)
+Section2:Toggle("close", true or false, function(value)
+    if value == true then
+    game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = false
+    end
+end)
+Section3:Slider("WalkSpeed", 0, 0, 500, function(s)
+    game.Workspace[plr.Name].Humanoid.WalkSpeed = s
+end)
+Section3:Slider("Jumppower", 0, 0, 500, function(s)
+    game.Workspace[plr.Name].Humanoid.JumpPower = s
+end)
+Section4:Toggle("remove fall dmg", true or false, function(value)
+    if value == true then
+        game:GetService("Workspace")[plr.Name]:FindFirstChild("FallDamageScript"):Destroy()
+    end
+end)
+Section4:Toggle("esp", true or false, function(value)
+    if value == true then
+        while wait() do
+            pcall(function()
+              for i,v in pairs(game.Players:GetChildren()) do
+                   if not v.Character.Head:FindFirstChild("ESP") then
+                       local BillboardGui = Instance.new("BillboardGui")
+                       local TextLabel = Instance.new("TextLabel")
+                       BillboardGui.Parent = v.Character.Head
+                       BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                       BillboardGui.Active = true
+                       BillboardGui.Name = "ESP"
+                       BillboardGui.AlwaysOnTop = true
+                       BillboardGui.LightInfluence = 1.000
+                       BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                       BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+                       TextLabel.Parent = BillboardGui
+                       TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                       TextLabel.BackgroundTransparency = 1.000
+                       TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                       TextLabel.Font = Enum.Font.GothamBold
+                       TextLabel.Text = v.Name
+                       TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                       TextLabel.TextScaled = true
+                       TextLabel.TextSize = 6.000
+                       TextLabel.TextStrokeTransparency = 0.000
+                       TextLabel.TextWrapped = true
+                   end
+               end
+           end) 
+       end  
+    end
+end)
+Section4:Toggle("invisible", true or false, function(value)
+    if value == true then
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+        local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+        local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+        x, y, z = X, Y, Z
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y-10000, z)
+    end
+end)
+end
+if game.PlaceId == 3956818381 then
+    local start = 0
+    local start1 = 0
+    local start2 = 0
+    local start3 = 0
+    local esp = 0
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Attrixx/FreeScripts/main/YTUILib1.lua"))():init("Grant hub-premuim")
+    local Tab = Library:Tab("Auto Farm")
+    local Section = Tab:Section("Auto swing")
+    local Section1 = Tab:Section("Auto sell")
+    local Section2 = Tab:Section("Auto buy all sword")
+    local Section3 = Tab:Section("Auto buy all belt")
+    local Tabs = Library:Tab("Mics")
+    local Sections = Tabs:Section("player setting")
+    local Sections1 = Tabs:Section("esp")
+    local Sections2 = Tabs:Section("invisible")
+    local Sections3 = Tabs:Section("gamepass")
+    local plrs = game:GetService("Players")
+    local plr = plrs.LocalPlayer
+    
+    Section:Toggle("Start", true or false, function(value)
+        if value == true then
+            start = start + 1
+            while start > 1 do
+                local A_1 = "swingKatana"
+                local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+                Event:FireServer(A_1)
+                wait()
+            end
+        end
+    end)
+    Section:Toggle("Stop", true or false, function(value)
+        if value == true then
+           start = start - 1
+        end
+    end)
+    Section1:Toggle("Start", true or false, function(value)
+        if value == true then
+            start1 = start1 + 1
+            while start1 > 1 do
+                game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                wait()
+            end
+        end
+    end)
+    Section1:Toggle("Stop", true or false, function(value)
+        if value == true then
+           start1 = start1 - 1
+        end
+    end)
+    Section2:Toggle("Start", true or false, function(value)
+        if value == true then
+            start2 = start2 + 1
+            while start2 > 1 do
+                local A_1 = "buyAllSwords"
+                local A_2 = "Inner Peace Island"
+                local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+                Event:FireServer(A_1, A_2)
+                wait()
+            end
+        end
+    end)
+    Section2:Toggle("Stop", true or false, function(value)
+        if value == true then
+           start3 = start3 - 1
+        end
+    end)
+    Section3:Toggle("Start", true or false, function(value)
+        if value == true then
+            start3 = start3 + 1
+            while start3 > 1 do
+                local A_1 = "buyAllBelts"
+                local A_2 = "Inner Peace Island"
+                local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+                Event:FireServer(A_1, A_2)
+                wait()
+            end
+        end
+    end)
+    Section3:Toggle("Stop", true or false, function(value)
+        if value == true then
+           start3 = start3 - 1
+        end
+    end)
+    Sections:Slider("WalkSpeed", 0, 0, 500, function(s)
+        game.Workspace[plr.Name].Humanoid.WalkSpeed = s
+    end)
+    Sections:Slider("Jumppower", 0, 0, 500, function(s)
+        game.Workspace[plr.Name].Humanoid.JumpPower = s
+    end)
+    Sections1:Toggle("esp", true or false, function(value)
+        if value == true then
+            while wait() do
+                pcall(function()
+                  for i,v in pairs(game.Players:GetChildren()) do
+                       if not v.Character.Head:FindFirstChild("ESP") then
+                           local BillboardGui = Instance.new("BillboardGui")
+                           local TextLabel = Instance.new("TextLabel")
+                           BillboardGui.Parent = v.Character.Head
+                           BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                           BillboardGui.Active = true
+                           BillboardGui.Name = "ESP"
+                           BillboardGui.AlwaysOnTop = true
+                           BillboardGui.LightInfluence = 1.000
+                           BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                           BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+                           TextLabel.Parent = BillboardGui
+                           TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                           TextLabel.BackgroundTransparency = 1.000
+                           TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                           TextLabel.Font = Enum.Font.GothamBold
+                           TextLabel.Text = v.Name
+                           TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                           TextLabel.TextScaled = true
+                           TextLabel.TextSize = 6.000
+                           TextLabel.TextStrokeTransparency = 0.000
+                           TextLabel.TextWrapped = true
+                       end
+                   end
+               end) 
+           end  
+        end
+    end)
+    Sections2:Toggle("invisible", true or false, function(value)
+        if value == true then
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+        local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+        local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+        x, y, z = X, Y, Z
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y-100000, z)
+        end
+    end)
+    Sections2:Toggle("visible", true or false, function(value)
+        if value == true then
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+        local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+        local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+        x, y, z = X, Y, Z
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y+100000, z)
+        end
+    end)
+    Sections3:Toggle("unlock all island", true or false, function(value)
+        if value == true then
+            for _,v in pairs(game:GetService("Workspace").islandUnlockParts:GetChildren()) do
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                wait(0.1)
+            end
+            wait(0.1)
+        end
+    end)
+end
+if game.PlaceId == 1962086868 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Attrixx/FreeScripts/main/YTUILib1.lua"))():init("Grant hub-premuim")
+    local Tab = Library:Tab("Main")
+    local Section = Tab:Section("Player setting")
+    local Section1 = Tab:Section("Mics")
+    local Section2 = Tab:Section("invisible function")
+    local Section3 = Tab:Section("special")
+    Section:Slider("speed", 0, 0, 500, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+    Section:Slider("jump", 0, 0, 500, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+    Section1:Toggle("inf jump", true or false, function(value)
+        if value == true then
+            game:GetService("ReplicatedStorage").globalJumps.Value = 6969
+        end
+    end)
+    Section1:Toggle("god", true or false, function(value)
+        if value == true then
+            function f()
+                game.Players.LocalPlayer.Character.KillScript:Destroy()
+             end
+             hookfunction(f, function()
+                game.Players.LocalPlayer.Character.KillScript:Destroy()
+             end)
+              
+             f()
+        end
+    end)
+    Section1:Toggle("unlock all item", true or false, function(value)
+        if value == true then
+            for i, v in pairs (game:GetService("ReplicatedStorage").Gear:GetChildren()) do
+                if v:IsA("Tool") then
+                poop = v:Clone()
+                poop.Parent = game:GetService("Players").LocalPlayer:FindFirstChild("Backpack")
+                end
+            end
+        end
+    end)
+    Section2:Toggle("invisible", true or false, function(value)
+        if value == true then
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+        local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+        local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+        x, y, z = X, Y, Z
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y-100000, z)
+        end
+    end)
+    Section2:Toggle("visible", true or false, function(value)
+        if value == true then
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+        local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+        local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+        x, y, z = X, Y, Z
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y+100000, z)
+        end
+    end)
+    Section3:Toggle("tp to end", true or false, function(value)
+        if value == true then
+            for i,v in pairs(game:GetService("Workspace").tower.sections.finish:GetChildren()) do
+                if v.Name == "FinishGlow" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                end
+            end
+        end
+    end)
+    Section3:Toggle("esp", true or false, function(value)
+        if value = true then
+        pcall(function()
+            for i,v in pairs(game.Players:GetChildren()) do
+                 if not v.Character.Head:FindFirstChild("ESP") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     local TextLabel = Instance.new("TextLabel")
+                     BillboardGui.Parent = v.Character.Head
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "ESP"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                     BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.GothamBold
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.TextScaled = true
+                     TextLabel.TextSize = 6.000
+                     TextLabel.TextStrokeTransparency = 0.000
+                     TextLabel.TextWrapped = true
+                 end
+             end
+         end)
+        end
+    end)
+end
