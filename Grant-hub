@@ -2,6 +2,8 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("Grant hub-Key system", DarkTheme)
 local Tab = Window:NewTab("basic script")
 local Section = Tab:NewSection("redeem key here")
+local Tabs = Window:NewTab("premuim script")
+local Sections = Tabs:NewSection("redeem key here")
 Section:NewTextBox("redeem", "Key", function(Key)
 	if Key == "GRANT_HUB_KEY_GHSDFHGSDJF" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/checkpoint2"))()
