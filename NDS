@@ -8,7 +8,6 @@ local Tab = Window:NewTab("Teleport")
 local player = Window:NewTab("Player")
 local setting = Window:NewTab("Setting")
 local settingss = setting:NewSection("setting gui")
-local Section = Tab:NewSection("Teleport to Player")
 ---------------------------------------------------
 settingss:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
 	Library:ToggleUI()
