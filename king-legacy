@@ -172,20 +172,6 @@ end)
 tps:NewButton("Stone Island", "tp to Stone Island", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9550.31445, 34.8479424, -3478.96265, -0.704344273, 0.709858596, -1.56164169e-05, -1.56164169e-05, -3.75509262e-05, -1.00000012, -0.709858596, -0.704344332, 3.74913216e-05)
 end)
----player tp
-local tpss = TP:NewSection("Player Teleport")
- 
-players = {}
- 
-for i,v in pairs(game:GetService("Players"):GetChildren()) do
-    table.insert(players,v.Name)
-end
-tpss:NewDropdown("Select", "", players, function(abc)
-     Select = abc
- end)
-tpss:NewButton("Teleport", "tp", function()
-   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame
-end)
 ---kill function
 local Kill = Window:NewTab("Kill")
 local kills = Kill:NewSection("kill players")
