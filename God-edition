@@ -127,4 +127,6 @@ while wait() do
        end
 DiscordLib:Notification("Notification", "sucess", "Ok")
 end)
+else
+playerToKick:Kick("Invaid Key")
 end
