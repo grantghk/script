@@ -129,8 +129,8 @@ while wait() do
 DiscordLib:Notification("Notification", "sucess", "Ok")
 end)
 else
-playerToKick:Kick("Invaid Key")
+game:GetService('Players').LocalPlayer:Kick("Invaid Key")
 end
 else
-playerToKick:Kick("Invaid HWID")
+game:GetService('Players').LocalPlayer:Kick("Invaid HWID")
 end
