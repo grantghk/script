@@ -1770,6 +1770,6 @@ end
 if game:GetService("RbxAnalyticsService"):GetClientId() == "35B9B6C0-0454-40E7-BDFB-4241CA51DE8E" then
 	start()
 end
-else 
+else
 game:GetService("Players").LocalPlayer:Kick("Invaid Key")
 end
