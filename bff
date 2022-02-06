@@ -619,7 +619,7 @@ start = value
                 VirtualUser:CaptureController()
                 VirtualUser:ClickButton1(Vector2.new(851, 158), game:GetService("Workspace").Camera.CFrame)
                 v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-                totarget(v.HumanoidRootPart.CFrame * CFrame.new(0, 20, 0))
+                totarget(v.HumanoidRootPart.CFrame * CFrame.new(0, 25, 0))
          
          
                 until v.Humanoid.Health <= 0
@@ -1518,6 +1518,19 @@ players:addDropdown({
 players:addToggle({
     title = "Kill player",
     callback = function(value)
+	        local player = game.Players.LocalPlayer
+            if player.Character then
+			if player.Character:FindFirstChild("Humanoid") then
+				player.Character.Humanoid.Name = "1"
+			end
+			local l = player.Character["1"]:Clone()
+			l.Parent = player.Character
+			l.Name = "Humanoid"; wait(0.1)
+			player.Character["1"]:Destroy()
+			workspace.CurrentCamera.CameraSubject = player.Character.Humanoid
+			player.Character.Animate.Disabled = true; wait(0.1)
+			player.Character.Animate.Disabled = false
+end
             while value == true do wait()
                 totarget(game.Players:FindFirstChild(curentplr).Character.HumanoidRootPart.CFrame * CFrame.new(0,20,0))
                 game.Players:FindFirstChild(curentplr).Character.HumanoidRootPart.Size = Vector3.new(600,600,600)
@@ -1529,6 +1542,19 @@ players:addToggle({
 players:addToggle({
     title = "Kill player (gun)",
     callback = function(value)
+	local player = game.Players.LocalPlayer
+	if player.Character then
+		if player.Character:FindFirstChild("Humanoid") then
+			player.Character.Humanoid.Name = "1"
+			end
+		local l = player.Character["1"]:Clone()
+		l.Parent = player.Character
+		l.Name = "Humanoid"; wait(0.1)
+		player.Character["1"]:Destroy()
+		workspace.CurrentCamera.CameraSubject = player.Character.Humanoid
+		player.Character.Animate.Disabled = true; wait(0.1)
+		player.Character.Animate.Disabled = false
+	end
             KillPlayer = value
             KillPlayer = value
             local args = {
