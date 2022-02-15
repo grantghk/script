@@ -71,11 +71,12 @@ end)
 players:NewButton("remove fall damage", "remove fall damage", function()
      game:GetService("Workspace")[plr.Name]:FindFirstChild("FallDamageScript"):Destroy()
 end)
-player2:NewButton("vote menu", "vote", function()
+player2:NewToggle("vote menu", "vote", function(state)
+if state then
 game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = true
-end)
-player2:NewButton("close vote menu", "close vote", function()
+else 
 game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = false
+end
 end)
 --------------------------------------------------
 Farm:NewToggle("Auto Farm", "Farm", function(a)
