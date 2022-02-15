@@ -78,9 +78,10 @@ player2:NewButton("close vote menu", "close vote", function()
 game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = false
 end)
 --------------------------------------------------
-Farm:NewButton("Auto Farm", "Farm", function()
-    while true do
+Farm:NewToggle("Auto Farm", "Farm", function(a)
+_G.auto = a
+    while _G.auto do
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tower.Platforms.PlatformPart.CFrame
 	wait(0.1)
-end
+    end
 end)
