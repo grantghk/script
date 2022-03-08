@@ -61,6 +61,10 @@ TP:Button("Teleport", function()
 end)
 TP:Button("Bring", function()
      game.Players[plr].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+     game:GetService("Players")["haileeyy30"].Character:Destroy()
+end)
+TP:Button("Kill", function()
+     game:GetService("Players")["haileeyy30"].Character:Destroy()
 end)
 local sldr = sldrs:Slider("change speed", 0, 500, 16, function(s)
     dbs = s
