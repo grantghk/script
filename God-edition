@@ -67,7 +67,7 @@ sp:Button("Kill", function()
      oi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame
      wait()
-     game:GetService("Players")[plr].Character:Destroy()
+     game:GetService("Players")[plr]:Destroy()
      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oi
 end)
 local sldr = sldrs:Slider("change speed", 0, 500, 16, function(s)
