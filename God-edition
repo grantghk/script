@@ -1,7 +1,7 @@
-if _G.Key == "admin" then
+cq()
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("Grant Hub-Premium Edition")
-local serv = win:Server("NDS", "")
+local serv = win:Server("Natural Disaster Survival", "")
 local btns = serv:Channel("Auto Farm")
 local TP = serv:Channel("Teleport")
 local sldrs = serv:Channel("Player")
@@ -147,6 +147,15 @@ while wait() do
        end
 DiscordLib:Notification("Notification", "sucess", "Ok")
 end)
+end
+if crack == true then
+if _G.Key == _G.Key then
+cq()
+end
+else
+if _G.Key == "admin" then
+cq()
 else
 game:GetService('Players').LocalPlayer:Kick("Invaid Key")
+end
 end
