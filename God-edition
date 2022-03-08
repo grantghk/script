@@ -88,6 +88,14 @@ Mics:Button("remove fall damage", function()
 game:GetService("Workspace")[plrss.Name]:FindFirstChild("FallDamageScript"):Destroy()
 DiscordLib:Notification("Notification", "sucess", "Ok")
 end)
+Mics:Toggle("Vote Menu",false, function(bool)
+    if bool == true then
+       game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = true
+    end
+    if bool == false then
+       game.Players[plr.Name].PlayerGui.MainGui.MapVotePage.Visible = false
+    end
+end)
 Mics:Button("invisible", function()
 local X = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
 local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
