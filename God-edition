@@ -5,6 +5,7 @@ local serv = win:Server("NDS", "")
 local btns = serv:Channel("Auto Farm")
 local TP = serv:Channel("Teleport")
 local sldrs = serv:Channel("Player")
+local sp = serv:Channel("Players")
 local Mics = serv:Channel("Mics")
 local drops = serv:Channel("Setting")
 local text = "none"
@@ -53,19 +54,21 @@ TP:Button("Teleport", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.464523, 47.818306, 15.4910545, -0.155365407, -1.09227747e-08, -0.987857044, -2.02209307e-08, 1, -7.87678811e-09, 0.987857044, 1.875161e-08, -0.155365407)
      end
 end)
-TP:Textbox("Player Name", "Plr Name", true, function(t)
+sp:Textbox("Player Name", "Plr Name", true, function(t)
     plr = t
 end)
-TP:Button("Teleport", function()
+sp:Button("Teleport", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame
 end)
-TP:Button("Bring", function()
+sp:Button("Bring", function()
      game.Players[plr].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 end)
-TP:Button("Kill", function()
+sp:Button("Kill", function()
+     oi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame
-     wait(0.25)
+     wait()
      game:GetService("Players")[plr].Character:Destroy()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oi
 end)
 local sldr = sldrs:Slider("change speed", 0, 500, 16, function(s)
     dbs = s
