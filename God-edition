@@ -66,7 +66,7 @@ sp:Button("Refesh", function()
 table.clear(players)
 pls:Clear()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
-   table.insert(players,v.Name)
+   pls:Add(v.Name)
 end
 end)
 sp:Label("Function")
