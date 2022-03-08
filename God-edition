@@ -53,11 +53,14 @@ TP:Button("Teleport", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.464523, 47.818306, 15.4910545, -0.155365407, -1.09227747e-08, -0.987857044, -2.02209307e-08, 1, -7.87678811e-09, 0.987857044, 1.875161e-08, -0.155365407)
      end
 end)
-TP:Textbox("Teleport to player", "Plr Name", true, function(t)
+TP:Textbox("Player Name", "Plr Name", true, function(t)
     plr = t
 end)
 TP:Button("Teleport", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame
+end)
+TP:Button("Bring", function()
+     game.Players[plr].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 end)
 local sldr = sldrs:Slider("change speed", 0, 500, 16, function(s)
     dbs = s
