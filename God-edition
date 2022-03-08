@@ -138,7 +138,6 @@ end)
 else
 game:GetService('Players').LocalPlayer:Kick("Invaid Key")
 end
-elseif game:GetService("RbxAnalyticsService"):GetClientId() == "35B9B6C0-0454-40E7-BDFB-4241CA51DE8E" then
 if _G.Key == "admin" then
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("Grant Hub-God Edition")
