@@ -1,0 +1,25 @@
+local hwidlist = {"01EC7A48-D384-4C0A-ADB1-082EA15A2188", "35B9B6C0-0454-40E7-BDFB-4241CA51DE8E"}
+local suscess = {}
+for i, v in pairs(hwidlist) do
+    if v == game:GetService("RbxAnalyticsService"):GetClientId() then
+        table.insert(suscess, true)
+    else
+        table.insert(suscess, false)
+    end
+    if suscess[1] == true and suscess[2] == false then
+        local StarterGui = game:GetService("StarterGui")
+        StarterGui:SetCore("SendNotification", {
+            Title = "Grant Hub";
+            Text = "loading...",
+        })
+        print("loading script")
+        wait(7.5)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/God-edition"))()
+        StarterGui:SetCore("SendNotification", {
+            Title = "Grant Hub";
+            Text = "Thank for buy script",
+        })
+    elseif suscess[1] == false and suscess[2] == false then
+        game:GetService('Players').LocalPlayer:Kick("Invaid HWID")
+    end
+end
