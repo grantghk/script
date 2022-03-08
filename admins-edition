@@ -13,13 +13,17 @@ for i, v in pairs(hwidlist) do
             Text = "loading...",
         })
         print("loading script")
-        wait(7.5)
+        wait(6)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/God-edition"))()
         StarterGui:SetCore("SendNotification", {
             Title = "Grant Hub";
-            Text = "Thank for buy script",
+            Text = "Thank For Use Script",
+        })
+        StarterGui:SetCore("SendNotification", {
+            Title = "Grant Hub";
+            Text = "Credit By:grant#5476",
         })
     elseif suscess[1] == false and suscess[2] == false then
-        game:GetService('Players').LocalPlayer:Kick("Invaid HWID")
+        game:GetService('Players').LocalPlayer:Kick("Send Log To Server:Cracker Man!!!")
     end
 end
