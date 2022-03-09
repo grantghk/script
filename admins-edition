@@ -1,3 +1,4 @@
+if game.PlaceId == 189707 then
 local hwidlist = loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/HWID"))()
 local keylist = loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/key"))()
 local Key = _G.Key
@@ -19,6 +20,10 @@ function cq()
             Title = "Grant Hub";
             Text = "Credit By:grant#5476",
         })
+        StarterGui:SetCore("SendNotification", {
+            Title = "Grant Hub";
+            Text = "This Script Is In Beta",
+        })
 end
 for i, v in pairs(hwidlist) do
     if v == game:GetService("RbxAnalyticsService"):GetClientId() then
@@ -33,5 +38,6 @@ end
 if suscesskey[1] == true then
 if suscessHWID[1] == true then
     cq()
+end
 end
 end
