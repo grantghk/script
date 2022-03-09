@@ -23,8 +23,6 @@ end
 for i, v in pairs(hwidlist) do
     if v == game:GetService("RbxAnalyticsService"):GetClientId() then
         table.insert(suscessHWID, true)
-    else
-        table.insert(suscessHWID, false)
     end
 end
 for i, v in pairs(keylist) do
@@ -33,9 +31,7 @@ for i, v in pairs(keylist) do
     end
 end
 if suscesskey[1] == true then
-if suscessHWID[1] == true and suscessHWID[2] == false then
+if suscessHWID[1] == true then
     cq()
-elseif suscessHWID[1] == false and suscessHWID[2] == false then
-    game:GetService('Players').LocalPlayer:Kick("Invaid HWID")
 end
 end
