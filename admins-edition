@@ -1,18 +1,14 @@
 local hwidlist = loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/HWID"))()
-local suscess = {}
-for i, v in pairs(hwidlist) do
-    if v == game:GetService("RbxAnalyticsService"):GetClientId() then
-        table.insert(suscess, true)
-    else
-        table.insert(suscess, false)
-    end
-    if suscess[1] == true and suscess[2] == false then
+local keylist = loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/key"))()
+local Key = _G.Key
+local suscessHWID = {}
+local suscesskey = {}
+function cq()
         local StarterGui = game:GetService("StarterGui")
         StarterGui:SetCore("SendNotification", {
             Title = "Grant Hub";
             Text = "loading...",
         })
-        print("loading script")
         wait(6)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/God-edition"))()
         StarterGui:SetCore("SendNotification", {
@@ -23,7 +19,27 @@ for i, v in pairs(hwidlist) do
             Title = "Grant Hub";
             Text = "Credit By:grant#5476",
         })
-    elseif suscess[1] == false and suscess[2] == false then
-        game:GetService('Players').LocalPlayer:Kick("Send Log To Server:Cracker Man!!!")
+end
+for i, v in pairs(hwidlist) do
+    if v == game:GetService("RbxAnalyticsService"):GetClientId() then
+        table.insert(suscessHWID, true)
+    else
+        table.insert(suscessHWID, false)
     end
+end
+for i, v in pairs(keylist) do
+    if v == _G.Key then
+        table.insert(suscesskey, true)
+    else
+        table.insert(suscesskey, false)
+    end
+end
+if suscesskey[1] == true and suscesskey[2] == false then
+    if suscessHWID[1] == true and suscessHWID[2] == false then
+        cq()
+    elseif suscesskey[1] == false and suscesskey[2] == false then
+        game:GetService('Players').LocalPlayer:Kick("Invaid Key")
+    end
+elseif suscessHWID[1] == false and suscessHWID[2] == false then
+    game:GetService('Players').LocalPlayer:Kick("Invaid HWID")
 end
