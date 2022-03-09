@@ -2,6 +2,7 @@ if game.PlaceId == 189707 then
 local hwidlist = loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/HWID"))()
 local keylist = loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/key"))()
 local Key = _G.Key
+local command = _G.command
 local suscessHWID = {}
 local suscesskey = {}
 function cq()
