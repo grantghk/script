@@ -1,4 +1,3 @@
-function cq()
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("Grant Hub-Premium Edition")
 local serv = win:Server("Natural Disaster Survival", "")
@@ -66,6 +65,7 @@ sp:Button("Refesh", function()
 table.clear(players)
 pls:Clear()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
+   table.insert(players,v.Name)
    pls:Add(v.Name)
 end
 end)
@@ -83,6 +83,7 @@ sp:Button("Kill", function()
      game:GetService("Players")[plr].Character:Destroy()
      game:GetService("Workspace")[plr]:Destroy()
      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oi
+     DiscordLib:Notification("Notification", "sucess", "Ok")
 end)
 local sldr = sldrs:Slider("change speed", 0, 500, 16, function(s)
     dbs = s
@@ -160,15 +161,3 @@ while wait() do
        end
 DiscordLib:Notification("Notification", "sucess", "Ok")
 end)
-end
-if crack == true then
-if _G.Key == _G.Key then
-cq()
-end
-else
-if _G.Key == "admin" then
-cq()
-else
-game:GetService('Players').LocalPlayer:Kick("Invaid Key")
-end
-end
