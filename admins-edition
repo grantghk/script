@@ -30,16 +30,12 @@ end
 for i, v in pairs(keylist) do
     if v == _G.Key then
         table.insert(suscesskey, true)
-    else
-        table.insert(suscesskey, false)
     end
 end
-if suscesskey[1] == true and suscesskey[2] == false then
-    if suscessHWID[1] == true and suscessHWID[2] == false then
-        cq()
-    elseif suscesskey[1] == false and suscesskey[2] == false then
-        game:GetService('Players').LocalPlayer:Kick("Invaid Key")
-    end
+if suscesskey[1] == true then
+if suscessHWID[1] == true and suscessHWID[2] == false then
+    cq()
 elseif suscessHWID[1] == false and suscessHWID[2] == false then
     game:GetService('Players').LocalPlayer:Kick("Invaid HWID")
+end
 end
