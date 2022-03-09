@@ -10,16 +10,18 @@ function cq()
             Title = "Grant Hub";
             Text = "loading...",
         })
-        wait(6)
+        wait(5.5)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/grantghk/script/main/God-edition"))()
         StarterGui:SetCore("SendNotification", {
             Title = "Grant Hub";
             Text = "Thank For Use Script",
         })
+        wait()
         StarterGui:SetCore("SendNotification", {
             Title = "Grant Hub";
             Text = "Credit By:grant#5476",
         })
+        wiat()
         StarterGui:SetCore("SendNotification", {
             Title = "Grant Hub";
             Text = "This Script Is In Beta",
