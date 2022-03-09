@@ -8,9 +8,10 @@ local sp = serv:Channel("Death Note")
 local Mics = serv:Channel("Mics")
 local drops = serv:Channel("Setting")
 local credit = serv:Channel("Info")
+local credist = serv:Channel("Credit")
 credit:Label("Thank For Use Grant Hub")
-credit:Label("Script By:grant#5476")
-credit:Label("Ui libary By:dawid#7205")
+credist:Label("Script By:grant#5476")
+credist:Label("Ui libary By:dawid#7205")
 credit:Button("Check Your Key", function()
     DiscordLib:Notification("Grant Hub", _G.Key, "OK")
 end)
@@ -137,7 +138,7 @@ local Y = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
 local Z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
 x, y, z = X, Y, Z
 game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(x, y-10000, z)
-DiscordLib:Notification("Notification", "sucess", "Ok")
+DiscordLib:Notification("Grant Hub", "sucess", "Ok")
 end)
 Mics:Button("esp", function()
 while wait() do
@@ -169,5 +170,5 @@ while wait() do
                end
            end) 
        end
-DiscordLib:Notification("Notification", "sucess", "Ok")
+DiscordLib:Notification("Grant Hub", "sucess", "OK")
 end)
