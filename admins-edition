@@ -21,7 +21,7 @@ function cq()
             Title = "Grant Hub";
             Text = "Credit By:grant#5476",
         })
-        wiat()
+        wait()
         StarterGui:SetCore("SendNotification", {
             Title = "Grant Hub";
             Text = "This Script Is In Beta",
